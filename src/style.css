@@ -1,0 +1,28 @@
+@import '@radix-ui/themes/styles.css';
+
+/**
+ * Radix UI: https://www.radix-ui.com/
+ * Radix Icons: https://www.radix-ui.com/icons
+ * Custom fonts from https://fonts.google.com/
+ */
+@font-face {
+  font-family: 'KanitRegular';
+  src: url('/fonts/Kanit/Kanit-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'PlaywriteGBS';
+  src: url('/fonts/Playwrite_GB_S/PlaywriteGBS-VariableFont_wght.ttf')
+    format('truetype');
+}
+@font-face {
+  font-family: 'RubikWetPaint';
+  src: url('/fonts/Rubik_Wet_Paint/RubikWetPaint-Regular.ttf')
+    format('truetype');
+}
+
+/** Feed custom fonts into Radix */
+.radix-themes {
+  --default-font-family: PlaywriteGBS, RubikWetPaint, KanitRegular,
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
