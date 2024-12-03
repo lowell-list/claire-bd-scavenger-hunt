@@ -8,9 +8,15 @@ const root = ReactDOMClient.createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <Theme accentColor='grass' grayColor='sand' radius='large' scaling='95%'>
+    <Theme
+      appearance='dark'
+      accentColor='green'
+      grayColor='sand'
+      radius='large'
+      scaling='100%'
+    >
       <App />
-      <ThemePanel defaultOpen={false}/>
+      <ThemePanel defaultOpen={false} />
     </Theme>
   </StrictMode>
 );

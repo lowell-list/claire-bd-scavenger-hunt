@@ -39,8 +39,11 @@ export interface ClueStatus {
   /** The number of incorrect guesses. */
   incorrectGuessCount: number;
 
-  /** The timestamp this clue was completed. If null, then it was not completed. */
-  completedAt: Date | null;
+  /**
+   * The timestamp this clue was completed, recorded as the number of milliseconds elapsed since the epoch.
+   * If null, then it was not completed.
+   */
+  completedAt: number | null;
 }
 
 /**
@@ -53,3 +56,14 @@ export interface GuestStatus {
   /** Array of clue status objects for this guest, in no particular order. */
   clueStatuses: ClueStatus[];
 }
+
+/**
+ * A partial object with one required key
+ * https://stackoverflow.com/a/57390160
+ */
+type AtLeast<T, K extends keyof T> = Partial<T> & Pick<T, K>;
+
+/**
+ * A partial ClueStatus object, but guaranteed to contain a `clueId` property.
+ */
+export type PartialClueStatus = AtLeast<ClueStatus, 'clueId'>;
